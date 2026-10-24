@@ -1,28 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NexaVest</title>
+import { createFileRoute } from "@tanstack/react-router";
 
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:Inter,Arial,sans-serif;
+export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "NexaVest" },
+      { name: "description", content: "NexaVest — create your account, mine, earn bonuses and withdraw." },
+      { property: "og:title", content: "NexaVest" },
+      { property: "og:description", content: "NexaVest — create your account, mine, earn bonuses and withdraw." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: Index,
+});
+
+function Index() {
+  return (
+    <iframe
+      src="/nexavest.html"
+      title="NexaVest"
+      className="fixed inset-0 h-screen w-screen border-0"
+    />
+  );
 }
 
-:root{
-  --bg:#07111f;
-  --panel:#0d1b2d;
-  --panel2:#10243a;
-  --border:rgba(255,255,255,.09);
-  --text:#f4f7fb;
-  --muted:#8fa1b5;
-  --green:#19d38a;
-  --green2:#0fae72;
-  --red:#ff5f6d;
   --blue:#4da3ff;
   --gold:#ffc857;
 }
